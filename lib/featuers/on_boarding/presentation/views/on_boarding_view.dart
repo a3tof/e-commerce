@@ -1,3 +1,4 @@
+import 'package:ecommerce/featuers/on_boarding/presentation/views/widgets/on_boarding_view_body.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingView extends StatelessWidget {
@@ -5,6 +6,8 @@ class OnboardingView extends StatelessWidget {
   static const routeName = 'onboarding';
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: SafeArea(child: OnboardingViewBody()),
+    );
   }
 }
