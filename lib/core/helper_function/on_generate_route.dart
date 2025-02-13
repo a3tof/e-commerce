@@ -1,4 +1,5 @@
 import 'package:ecommerce/featuers/auth/presentation/views/login_view.dart';
+import 'package:ecommerce/featuers/auth/presentation/views/sign_up_view.dart';
 import 'package:ecommerce/featuers/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:ecommerce/featuers/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
     case SplashView.routeName:
       return MaterialPageRoute(builder: (_) => const SplashView());
+    case SignUpView.routeName:
+      return MaterialPageRoute(builder: (_) => const SignUpView());
     case OnboardingView.routeName:
       return MaterialPageRoute(builder: (_) => const OnboardingView());
     case LoginView.routeName:
