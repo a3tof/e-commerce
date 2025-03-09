@@ -1,19 +1,24 @@
 import 'package:ecommerce/core/helper_function/on_generate_route.dart';
+import 'package:ecommerce/core/services/custom_bloc_observer.dart';
+import 'package:ecommerce/core/services/get_it_service.dart';
 import 'package:ecommerce/core/services/shared_preferences_singletone.dart';
 import 'package:ecommerce/core/utils/app_color.dart';
 import 'package:ecommerce/featuers/splash/presentation/views/splash_view.dart';
 import 'package:ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = CustomBlocObserver();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await Prefs.init();
+  setupGetit();
   runApp(const FruitHub());
 }
 
